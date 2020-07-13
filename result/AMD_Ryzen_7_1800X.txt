@@ -1,0 +1,980 @@
+
+*** args ***
+run_bench.sh BA
+
+*** uname -a ***
+Linux home.zuntan.net 4.18.0-193.6.3.el8_2.x86_64 #1 SMP Wed Jun 10 11:09:32 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+*** cargo clean ***
+
+real	0m0.051s
+user	0m0.007s
+sys	0m0.044s
+
+*** cargo check 1 ***
+   Compiling autocfg v1.0.0
+   Compiling libc v0.2.72
+   Compiling memchr v2.3.3
+   Compiling log v0.4.8
+    Checking lazy_static v1.4.0
+    Checking quick-error v1.2.3
+    Checking cfg-if v0.1.10
+    Checking regex-syntax v0.6.18
+    Checking termcolor v1.1.0
+    Checking unicode-width v0.1.8
+    Checking hound v3.4.0
+    Checking humantime v1.3.0
+    Checking thread_local v1.0.1
+    Checking getopts v0.2.21
+   Compiling num-traits v0.2.12
+   Compiling num-integer v0.1.43
+    Checking aho-corasick v0.7.13
+    Checking atty v0.2.14
+    Checking time v0.1.43
+    Checking num-complex v0.3.0
+    Checking chrono v0.4.13
+    Checking chfft v0.3.4
+    Checking regex v1.3.9
+    Checking env_logger v0.7.1
+    Checking pretty_env_logger v0.4.0
+    Checking fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 3.61s
+
+real	0m3.622s
+user	0m11.949s
+sys	0m1.088s
+
+*** cargo check 2 ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+
+real	0m0.021s
+user	0m0.012s
+sys	0m0.010s
+
+*** cargo build ***
+   Compiling lazy_static v1.4.0
+   Compiling regex-syntax v0.6.18
+   Compiling cfg-if v0.1.10
+   Compiling quick-error v1.2.3
+   Compiling termcolor v1.1.0
+   Compiling unicode-width v0.1.8
+   Compiling hound v3.4.0
+   Compiling libc v0.2.72
+   Compiling memchr v2.3.3
+   Compiling num-traits v0.2.12
+   Compiling log v0.4.8
+   Compiling humantime v1.3.0
+   Compiling thread_local v1.0.1
+   Compiling getopts v0.2.21
+   Compiling aho-corasick v0.7.13
+   Compiling atty v0.2.14
+   Compiling time v0.1.43
+   Compiling num-complex v0.3.0
+   Compiling num-integer v0.1.43
+   Compiling chrono v0.4.13
+   Compiling chfft v0.3.4
+   Compiling regex v1.3.9
+   Compiling env_logger v0.7.1
+   Compiling pretty_env_logger v0.4.0
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 6.09s
+
+real	0m6.100s
+user	0m28.445s
+sys	0m1.274s
+
+*** cargo build --release ***
+   Compiling autocfg v1.0.0
+   Compiling libc v0.2.72
+   Compiling memchr v2.3.3
+   Compiling lazy_static v1.4.0
+   Compiling log v0.4.8
+   Compiling quick-error v1.2.3
+   Compiling cfg-if v0.1.10
+   Compiling regex-syntax v0.6.18
+   Compiling termcolor v1.1.0
+   Compiling unicode-width v0.1.8
+   Compiling hound v3.4.0
+   Compiling humantime v1.3.0
+   Compiling thread_local v1.0.1
+   Compiling getopts v0.2.21
+   Compiling aho-corasick v0.7.13
+   Compiling num-traits v0.2.12
+   Compiling num-integer v0.1.43
+   Compiling atty v0.2.14
+   Compiling time v0.1.43
+   Compiling num-complex v0.3.0
+   Compiling chrono v0.4.13
+   Compiling regex v1.3.9
+   Compiling chfft v0.3.4
+   Compiling env_logger v0.7.1
+   Compiling pretty_env_logger v0.4.0
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished release [optimized] target(s) in 9.48s
+
+real	0m9.495s
+user	1m22.770s
+sys	0m1.772s
+
+*** cargo build --target armv7-unknown-linux-gnueabihf ***
+   Compiling lazy_static v1.4.0
+   Compiling quick-error v1.2.3
+   Compiling regex-syntax v0.6.18
+   Compiling cfg-if v0.1.10
+   Compiling termcolor v1.1.0
+   Compiling unicode-width v0.1.8
+   Compiling hound v3.4.0
+   Compiling libc v0.2.72
+   Compiling memchr v2.3.3
+   Compiling log v0.4.8
+   Compiling num-traits v0.2.12
+   Compiling num-integer v0.1.43
+   Compiling thread_local v1.0.1
+   Compiling humantime v1.3.0
+   Compiling getopts v0.2.21
+   Compiling aho-corasick v0.7.13
+   Compiling atty v0.2.14
+   Compiling time v0.1.43
+   Compiling num-complex v0.3.0
+   Compiling chrono v0.4.13
+   Compiling chfft v0.3.4
+   Compiling regex v1.3.9
+   Compiling env_logger v0.7.1
+   Compiling pretty_env_logger v0.4.0
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 6.58s
+
+real	0m6.592s
+user	0m28.411s
+sys	0m1.483s
+
+*** cargo build --target armv7-unknown-linux-gnueabihf --release ***
+   Compiling lazy_static v1.4.0
+   Compiling cfg-if v0.1.10
+   Compiling quick-error v1.2.3
+   Compiling regex-syntax v0.6.18
+   Compiling termcolor v1.1.0
+   Compiling unicode-width v0.1.8
+   Compiling hound v3.4.0
+   Compiling libc v0.2.72
+   Compiling memchr v2.3.3
+   Compiling log v0.4.8
+   Compiling num-traits v0.2.12
+   Compiling num-integer v0.1.43
+   Compiling humantime v1.3.0
+   Compiling thread_local v1.0.1
+   Compiling getopts v0.2.21
+   Compiling aho-corasick v0.7.13
+   Compiling atty v0.2.14
+   Compiling time v0.1.43
+   Compiling num-complex v0.3.0
+   Compiling chrono v0.4.13
+   Compiling chfft v0.3.4
+   Compiling regex v1.3.9
+   Compiling env_logger v0.7.1
+   Compiling pretty_env_logger v0.4.0
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished release [optimized] target(s) in 9.12s
+
+real	0m9.128s
+user	1m11.956s
+sys	0m1.461s
+
+*** cargo run  -- -l 180 -s  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/fft_bench -l 180 -s`
+ INFO  fft_bench > f64         [false]
+ INFO  fft_bench > skipfft     [true]
+ INFO  fft_bench > wav output  []
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   3.6960] sec 
+ INFO  fft_bench > (1) / (2)       [  48.7016]     
+
+real	0m3.719s
+user	0m3.711s
+sys	0m0.005s
+
+*** cargo run  -- -l 180 -s -w  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/fft_bench -l 180 -s -w`
+ INFO  fft_bench > f64         [false]
+ INFO  fft_bench > skipfft     [true]
+ INFO  fft_bench > wav output  [tmp.wav]
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   4.5290] sec 
+ INFO  fft_bench > (1) / (2)       [  39.7441]     
+
+real	0m4.552s
+user	0m4.532s
+sys	0m0.013s
+
+*** cargo run  -- -l 180  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/fft_bench -l 180`
+ INFO  fft_bench > f64         [false]
+ INFO  fft_bench > skipfft     [false]
+ INFO  fft_bench > wav output  []
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   8.4620] sec 
+ INFO  fft_bench > (1) / (2)       [  21.2717]     
+
+real	0m8.485s
+user	0m8.473s
+sys	0m0.005s
+
+*** cargo run  -- -l 180 -w  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/fft_bench -l 180 -w`
+ INFO  fft_bench > f64         [false]
+ INFO  fft_bench > skipfft     [false]
+ INFO  fft_bench > wav output  [tmp.wav]
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   9.1030] sec 
+ INFO  fft_bench > (1) / (2)       [  19.7738]     
+
+real	0m9.126s
+user	0m9.088s
+sys	0m0.027s
+
+*** cargo run  -- -l 180 -6  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/fft_bench -l 180 -6`
+ INFO  fft_bench > f64         [true]
+ INFO  fft_bench > skipfft     [false]
+ INFO  fft_bench > wav output  []
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   6.3130] sec 
+ INFO  fft_bench > (1) / (2)       [  28.5128]     
+
+real	0m6.336s
+user	0m6.326s
+sys	0m0.004s
+
+*** cargo run  -- -l 180 -6 -w  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/fft_bench -l 180 -6 -w`
+ INFO  fft_bench > f64         [true]
+ INFO  fft_bench > skipfft     [false]
+ INFO  fft_bench > wav output  [tmp.wav]
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   6.9730] sec 
+ INFO  fft_bench > (1) / (2)       [  25.8140]     
+
+real	0m6.996s
+user	0m6.963s
+sys	0m0.024s
+
+*** cargo run  --release -- -l 180 -s  ***
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/fft_bench -l 180 -s`
+ INFO  fft_bench > f64         [false]
+ INFO  fft_bench > skipfft     [true]
+ INFO  fft_bench > wav output  []
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   0.2390] sec 
+ INFO  fft_bench > (1) / (2)       [ 753.1426]     
+
+real	0m0.262s
+user	0m0.256s
+sys	0m0.007s
+
+*** cargo run  --release -- -l 180 -s -w  ***
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/fft_bench -l 180 -s -w`
+ INFO  fft_bench > f64         [false]
+ INFO  fft_bench > skipfft     [true]
+ INFO  fft_bench > wav output  [tmp.wav]
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   0.2680] sec 
+ INFO  fft_bench > (1) / (2)       [ 671.6459]     
+
+real	0m0.291s
+user	0m0.267s
+sys	0m0.015s
+
+*** cargo run  --release -- -l 180  ***
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/fft_bench -l 180`
+ INFO  fft_bench > f64         [false]
+ INFO  fft_bench > skipfft     [false]
+ INFO  fft_bench > wav output  []
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   0.3120] sec 
+ INFO  fft_bench > (1) / (2)       [ 576.9266]     
+
+real	0m0.334s
+user	0m0.328s
+sys	0m0.007s
+
+*** cargo run  --release -- -l 180 -w  ***
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/fft_bench -l 180 -w`
+ INFO  fft_bench > f64         [false]
+ INFO  fft_bench > skipfft     [false]
+ INFO  fft_bench > wav output  [tmp.wav]
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   0.3370] sec 
+ INFO  fft_bench > (1) / (2)       [ 534.1279]     
+
+real	0m0.359s
+user	0m0.335s
+sys	0m0.020s
+
+*** cargo run  --release -- -l 180 -6  ***
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/fft_bench -l 180 -6`
+ INFO  fft_bench > f64         [true]
+ INFO  fft_bench > skipfft     [false]
+ INFO  fft_bench > wav output  []
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   0.5680] sec 
+ INFO  fft_bench > (1) / (2)       [ 316.9033]     
+
+real	0m0.591s
+user	0m0.587s
+sys	0m0.005s
+
+*** cargo run  --release -- -l 180 -6 -w  ***
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/fft_bench -l 180 -6 -w`
+ INFO  fft_bench > f64         [true]
+ INFO  fft_bench > skipfft     [false]
+ INFO  fft_bench > wav output  [tmp.wav]
+ INFO  fft_bench > wav len     [180] sec
+ INFO  fft_bench > freqs       [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   0.6550] sec 
+ INFO  fft_bench > (1) / (2)       [ 274.8108]     
+
+real	0m0.678s
+user	0m0.598s
+sys	0m0.014s
+
+*** cpu ***
+processor	: 0
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3691.045
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 0
+cpu cores	: 8
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 1
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3709.375
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 1
+cpu cores	: 8
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 2
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3705.101
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 2
+cpu cores	: 8
+apicid		: 4
+initial apicid	: 4
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 3
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3702.391
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 3
+cpu cores	: 8
+apicid		: 6
+initial apicid	: 6
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 4
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3691.896
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 4
+cpu cores	: 8
+apicid		: 8
+initial apicid	: 8
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 5
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3689.146
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 5
+cpu cores	: 8
+apicid		: 10
+initial apicid	: 10
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 6
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3692.755
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 6
+cpu cores	: 8
+apicid		: 12
+initial apicid	: 12
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 7
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3692.191
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 7
+cpu cores	: 8
+apicid		: 14
+initial apicid	: 14
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 8
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3684.535
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 0
+cpu cores	: 8
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 9
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3658.830
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 1
+cpu cores	: 8
+apicid		: 3
+initial apicid	: 3
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 10
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3690.944
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 2
+cpu cores	: 8
+apicid		: 5
+initial apicid	: 5
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 11
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3680.504
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 3
+cpu cores	: 8
+apicid		: 7
+initial apicid	: 7
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 12
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3690.324
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 4
+cpu cores	: 8
+apicid		: 9
+initial apicid	: 9
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 13
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3680.623
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 5
+cpu cores	: 8
+apicid		: 11
+initial apicid	: 11
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 14
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3688.146
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 6
+cpu cores	: 8
+apicid		: 13
+initial apicid	: 13
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+processor	: 15
+vendor_id	: AuthenticAMD
+cpu family	: 23
+model		: 1
+model name	: AMD Ryzen 7 1800X Eight-Core Processor
+stepping	: 1
+microcode	: 0x8001138
+cpu MHz		: 3701.061
+cache size	: 512 KB
+physical id	: 0
+siblings	: 16
+core id		: 7
+cpu cores	: 8
+apicid		: 15
+initial apicid	: 15
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate sme ssbd sev ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 xsaves clzero irperf xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca
+bugs		: sysret_ss_attrs null_seg spectre_v1 spectre_v2 spec_store_bypass
+bogomips	: 7185.51
+TLB size	: 2560 4K pages
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 43 bits physical, 48 bits virtual
+power management: ts ttp tm hwpstate eff_freq_ro [13] [14]
+
+
+*** mem ***
+              total        used        free      shared  buff/cache   available
+Mem:           62Gi       6.7Gi        31Gi        25Mi        23Gi        55Gi
+Swap:         4.0Gi          0B       4.0Gi
+
+MemTotal:       65628536 kB
+MemFree:        33471388 kB
+MemAvailable:   57818564 kB
+Buffers:            4304 kB
+Cached:         24497408 kB
+SwapCached:            0 kB
+Active:         11234632 kB
+Inactive:       19428628 kB
+Active(anon):    6163000 kB
+Inactive(anon):    24332 kB
+Active(file):    5071632 kB
+Inactive(file): 19404296 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       4196348 kB
+SwapFree:        4196348 kB
+Dirty:               144 kB
+Writeback:         15516 kB
+AnonPages:       6160008 kB
+Mapped:           160088 kB
+Shmem:             25760 kB
+KReclaimable:     595148 kB
+Slab:            1073044 kB
+SReclaimable:     595148 kB
+SUnreclaim:       477896 kB
+KernelStack:        6272 kB
+PageTables:        25836 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    37010616 kB
+Committed_AS:    9503108 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+Percpu:            19200 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   6021120 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+Hugetlb:               0 kB
+DirectMap4k:      350328 kB
+DirectMap2M:    17408000 kB
+DirectMap1G:    50331648 kB

@@ -1,5 +1,9 @@
 #!/bin/sh
 
+echo ""
+echo "*** args ***"
+echo $0 $@
+
 LEN=180
 BA=0
 
@@ -26,15 +30,20 @@ param_r=(
 )
 
 echo ""
-echo "*** cargo clean 1 ***"
+echo "*** uname -a ***"
+uname -a
+
+
+echo ""
+echo "*** cargo clean ***"
 time cargo clean
 
 echo ""
-echo "*** cargo clean 2 ***"
-time cargo clean
+echo "*** cargo check 1 ***"
+time cargo check
 
 echo ""
-echo "*** cargo check ***"
+echo "*** cargo check 2 ***"
 time cargo check
 
 echo ""
@@ -62,7 +71,18 @@ do
 	for p in ${!param[@]}
 	do
 		echo ""
-		echo " *** cargo run " ${param_r[$r]} ${param[$p]} " ***"
+		echo "*** cargo run " ${param_r[$r]} ${param[$p]} " ***"
 		time cargo run ${param_r[$r]} ${param[$p]}
 	done
 done
+
+echo ""
+echo "*** cpu ***"
+cat /proc/cpuinfo
+
+echo ""
+echo "*** mem ***"
+free -h
+echo ""
+cat /proc/meminfo
+
