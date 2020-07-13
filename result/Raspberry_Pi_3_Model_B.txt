@@ -1,0 +1,794 @@
+
+*** args ***
+run_bench.sh BA
+
+*** uname -a ***
+Linux momo 4.19.118-v7+ #1311 SMP Mon Apr 27 14:21:24 BST 2020 armv7l GNU/Linux
+
+*** cargo clean ***
+
+TIME R:0.48 S:0.35 U:0.08 P:89% CMD:cargo clean
+
+*** cargo check 1 ***
+   Compiling autocfg v1.0.0
+   Compiling libc v0.2.72
+   Compiling memchr v2.3.3
+   Compiling log v0.4.8
+    Checking lazy_static v1.4.0
+    Checking regex-syntax v0.6.18
+    Checking cfg-if v0.1.10
+    Checking quick-error v1.2.3
+    Checking termcolor v1.1.0
+    Checking unicode-width v0.1.8
+    Checking hound v3.4.0
+    Checking thread_local v1.0.1
+    Checking humantime v1.3.0
+    Checking getopts v0.2.21
+   Compiling num-traits v0.2.12
+   Compiling num-integer v0.1.43
+    Checking aho-corasick v0.7.13
+    Checking atty v0.2.14
+    Checking time v0.1.43
+    Checking num-complex v0.3.0
+    Checking chrono v0.4.13
+    Checking regex v1.3.9
+    Checking chfft v0.3.4
+    Checking env_logger v0.7.1
+    Checking pretty_env_logger v0.4.0
+    Checking fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 48.45s
+
+TIME R:48.48 S:5.88 U:141.14 P:303% CMD:cargo check
+
+*** cargo check 2 ***
+    Checking fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.58s
+
+TIME R:0.61 S:0.10 U:0.53 P:102% CMD:cargo check
+
+*** cargo build --target armv7-unknown-linux-gnueabihf 1 ***
+   Compiling lazy_static v1.4.0
+   Compiling cfg-if v0.1.10
+   Compiling regex-syntax v0.6.18
+   Compiling quick-error v1.2.3
+   Compiling termcolor v1.1.0
+   Compiling unicode-width v0.1.8
+   Compiling hound v3.4.0
+   Compiling libc v0.2.72
+   Compiling memchr v2.3.3
+   Compiling log v0.4.8
+   Compiling thread_local v1.0.1
+   Compiling humantime v1.3.0
+   Compiling getopts v0.2.21
+   Compiling num-traits v0.2.12
+   Compiling num-integer v0.1.43
+   Compiling aho-corasick v0.7.13
+   Compiling atty v0.2.14
+   Compiling time v0.1.43
+   Compiling num-complex v0.3.0
+   Compiling regex v1.3.9
+   Compiling chrono v0.4.13
+   Compiling chfft v0.3.4
+   Compiling env_logger v0.7.1
+   Compiling pretty_env_logger v0.4.0
+   Compiling fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 1m 36s
+
+TIME R:96.10 S:8.35 U:324.00 P:345% CMD:cargo build --target armv7-unknown-linux-gnueabihf
+
+*** cargo build --target armv7-unknown-linux-gnueabihf 2 ***
+   Compiling fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 12.88s
+
+TIME R:12.91 S:1.21 U:11.80 P:100% CMD:cargo build --target armv7-unknown-linux-gnueabihf
+
+*** cargo build --target armv7-unknown-linux-gnueabihf --release 1 ***
+   Compiling autocfg v1.0.0
+   Compiling libc v0.2.72
+   Compiling memchr v2.3.3
+   Compiling lazy_static v1.4.0
+   Compiling log v0.4.8
+   Compiling cfg-if v0.1.10
+   Compiling regex-syntax v0.6.18
+   Compiling quick-error v1.2.3
+   Compiling termcolor v1.1.0
+   Compiling unicode-width v0.1.8
+   Compiling hound v3.4.0
+   Compiling thread_local v1.0.1
+   Compiling humantime v1.3.0
+   Compiling getopts v0.2.21
+   Compiling num-traits v0.2.12
+   Compiling num-integer v0.1.43
+   Compiling aho-corasick v0.7.13
+   Compiling atty v0.2.14
+   Compiling time v0.1.43
+   Compiling regex v1.3.9
+   Compiling num-complex v0.3.0
+   Compiling chfft v0.3.4
+   Compiling chrono v0.4.13
+   Compiling env_logger v0.7.1
+   Compiling pretty_env_logger v0.4.0
+   Compiling fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished release [optimized] target(s) in 2m 56s
+
+TIME R:176.36 S:8.63 U:668.38 P:383% CMD:cargo build --target armv7-unknown-linux-gnueabihf --release
+
+*** cargo build --target armv7-unknown-linux-gnueabihf --release 2 ***
+   Compiling fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished release [optimized] target(s) in 18.05s
+
+TIME R:18.08 S:0.64 U:49.64 P:278% CMD:cargo build --target armv7-unknown-linux-gnueabihf --release
+
+*** cargo build 1 ***
+   Compiling lazy_static v1.4.0
+   Compiling regex-syntax v0.6.18
+   Compiling quick-error v1.2.3
+   Compiling cfg-if v0.1.10
+   Compiling termcolor v1.1.0
+   Compiling unicode-width v0.1.8
+   Compiling hound v3.4.0
+   Compiling thread_local v1.0.1
+   Compiling humantime v1.3.0
+   Compiling getopts v0.2.21
+   Compiling libc v0.2.72
+   Compiling memchr v2.3.3
+   Compiling log v0.4.8
+   Compiling num-traits v0.2.12
+   Compiling aho-corasick v0.7.13
+   Compiling atty v0.2.14
+   Compiling time v0.1.43
+   Compiling num-integer v0.1.43
+   Compiling num-complex v0.3.0
+   Compiling regex v1.3.9
+   Compiling chrono v0.4.13
+   Compiling chfft v0.3.4
+   Compiling env_logger v0.7.1
+   Compiling pretty_env_logger v0.4.0
+   Compiling fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 1m 37s
+
+TIME R:97.84 S:7.47 U:329.03 P:343% CMD:cargo build
+
+*** cargo build 2 ***
+   Compiling fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 12.88s
+
+TIME R:12.91 S:1.39 U:11.61 P:100% CMD:cargo build
+
+*** cargo build --release 1 ***
+   Compiling lazy_static v1.4.0
+   Compiling quick-error v1.2.3
+   Compiling cfg-if v0.1.10
+   Compiling regex-syntax v0.6.18
+   Compiling termcolor v1.1.0
+   Compiling unicode-width v0.1.8
+   Compiling hound v3.4.0
+   Compiling libc v0.2.72
+   Compiling log v0.4.8
+   Compiling memchr v2.3.3
+   Compiling thread_local v1.0.1
+   Compiling humantime v1.3.0
+   Compiling getopts v0.2.21
+   Compiling num-traits v0.2.12
+   Compiling num-integer v0.1.43
+   Compiling aho-corasick v0.7.13
+   Compiling atty v0.2.14
+   Compiling time v0.1.43
+   Compiling regex v1.3.9
+   Compiling num-complex v0.3.0
+   Compiling env_logger v0.7.1
+   Compiling chrono v0.4.13
+   Compiling pretty_env_logger v0.4.0
+   Compiling chfft v0.3.4
+   Compiling fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished release [optimized] target(s) in 2m 57s
+
+TIME R:177.43 S:7.14 U:672.89 P:383% CMD:cargo build --release
+
+*** cargo build --release 2 ***
+   Compiling fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished release [optimized] target(s) in 18.70s
+
+TIME R:18.76 S:0.57 U:52.95 P:285% CMD:cargo build --release
+
+*** cargo run  -- -l 180 -s  ***
+   Compiling fft_bench v0.1.0 (/home/zuntan/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 12.87s
+     Running `target/debug/fft_bench -l 180 -s`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [true]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [0] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  18.4680] sec 
+ INFO  fft_bench > (1) / (2)       [   9.7466]     
+
+TIME R:31.38 S:1.25 U:30.23 P:100% CMD:cargo run -- -l 180 -s
+
+*** cargo run  -- -l 180 -s -w  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target/debug/fft_bench -l 180 -s -w`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [true]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [0] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  21.6130] sec 
+ INFO  fft_bench > (1) / (2)       [   8.3284]     
+
+TIME R:21.77 S:0.12 U:21.62 P:99% CMD:cargo run -- -l 180 -s -w
+
+*** cargo run  -- -l 180  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target/debug/fft_bench -l 180`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  35.4350] sec 
+ INFO  fft_bench > (1) / (2)       [   5.0798]     
+
+TIME R:35.60 S:0.03 U:35.55 P:99% CMD:cargo run -- -l 180
+
+*** cargo run  -- -l 180 -b  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target/debug/fft_bench -l 180 -b`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [true]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  57.2230] sec 
+ INFO  fft_bench > (1) / (2)       [   3.1456]     
+
+TIME R:57.38 S:0.05 U:57.32 P:99% CMD:cargo run -- -l 180 -b
+
+*** cargo run  -- -l 180 -w  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target/debug/fft_bench -l 180 -w`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  38.0780] sec 
+ INFO  fft_bench > (1) / (2)       [   4.7272]     
+
+TIME R:38.24 S:0.12 U:38.10 P:99% CMD:cargo run -- -l 180 -w
+
+*** cargo run  -- -l 180 -w -b -x  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target/debug/fft_bench -l 180 -w -b -x`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [true]
+ INFO  fft_bench > wav output bw [tmp_fftbw.wav]
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  65.3060] sec 
+ INFO  fft_bench > (1) / (2)       [   2.7563]     
+
+TIME R:65.47 S:0.27 U:65.11 P:99% CMD:cargo run -- -l 180 -w -b -x
+
+*** cargo run  -- -l 180 -6  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target/debug/fft_bench -l 180 -6`
+ INFO  fft_bench > f64           [true]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  36.9650] sec 
+ INFO  fft_bench > (1) / (2)       [   4.8695]     
+
+TIME R:37.12 S:0.06 U:37.05 P:99% CMD:cargo run -- -l 180 -6
+
+*** cargo run  -- -l 180 -6 -b  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target/debug/fft_bench -l 180 -6 -b`
+ INFO  fft_bench > f64           [true]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [true]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  59.6540] sec 
+ INFO  fft_bench > (1) / (2)       [   3.0174]     
+
+TIME R:59.81 S:0.02 U:59.78 P:99% CMD:cargo run -- -l 180 -6 -b
+
+*** cargo run  -- -l 180 -6 -w  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target/debug/fft_bench -l 180 -6 -w`
+ INFO  fft_bench > f64           [true]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  41.3980] sec 
+ INFO  fft_bench > (1) / (2)       [   4.3481]     
+
+TIME R:41.56 S:0.23 U:41.26 P:99% CMD:cargo run -- -l 180 -6 -w
+
+*** cargo run  -- -l 180 -6 -w -b -x  ***
+    Finished dev [unoptimized + debuginfo] target(s) in 0.13s
+     Running `target/debug/fft_bench -l 180 -6 -w -b -x`
+ INFO  fft_bench > f64           [true]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [true]
+ INFO  fft_bench > wav output bw [tmp_fftbw.wav]
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [  68.0080] sec 
+ INFO  fft_bench > (1) / (2)       [   2.6468]     
+
+TIME R:68.17 S:0.35 U:67.60 P:99% CMD:cargo run -- -l 180 -6 -w -b -x
+
+*** cargo run  --release -- -l 180 -s  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180 -s`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [true]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [0] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   3.2940] sec 
+ INFO  fft_bench > (1) / (2)       [  54.6451]     
+
+TIME R:3.45 S:0.02 U:3.42 P:99% CMD:cargo run --release -- -l 180 -s
+
+*** cargo run  --release -- -l 180 -s -w  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180 -s -w`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [true]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [0] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   3.4200] sec 
+ INFO  fft_bench > (1) / (2)       [  52.6319]     
+
+TIME R:3.58 S:0.13 U:3.44 P:99% CMD:cargo run --release -- -l 180 -s -w
+
+*** cargo run  --release -- -l 180  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   4.2180] sec 
+ INFO  fft_bench > (1) / (2)       [  42.6745]     
+
+TIME R:4.38 S:0.03 U:4.34 P:99% CMD:cargo run --release -- -l 180
+
+*** cargo run  --release -- -l 180 -b  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180 -b`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [true]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   5.1240] sec 
+ INFO  fft_bench > (1) / (2)       [  35.1290]     
+
+TIME R:5.28 S:0.03 U:5.24 P:100% CMD:cargo run --release -- -l 180 -b
+
+*** cargo run  --release -- -l 180 -w  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180 -w`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   4.4040] sec 
+ INFO  fft_bench > (1) / (2)       [  40.8722]     
+
+TIME R:4.56 S:0.15 U:4.41 P:100% CMD:cargo run --release -- -l 180 -w
+
+*** cargo run  --release -- -l 180 -w -b -x  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180 -w -b -x`
+ INFO  fft_bench > f64           [false]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [true]
+ INFO  fft_bench > wav output bw [tmp_fftbw.wav]
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.365, 659.255]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   6.0940] sec 
+ INFO  fft_bench > (1) / (2)       [  29.5374]     
+
+TIME R:6.25 S:0.19 U:5.42 P:89% CMD:cargo run --release -- -l 180 -w -b -x
+
+*** cargo run  --release -- -l 180 -6  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180 -6`
+ INFO  fft_bench > f64           [true]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   5.6880] sec 
+ INFO  fft_bench > (1) / (2)       [  31.6458]     
+
+TIME R:5.85 S:0.01 U:5.83 P:100% CMD:cargo run --release -- -l 180 -6
+
+*** cargo run  --release -- -l 180 -6 -b  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180 -6 -b`
+ INFO  fft_bench > f64           [true]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    []
+ INFO  fft_bench > enable_fft_bw [true]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   6.9640] sec 
+ INFO  fft_bench > (1) / (2)       [  25.8474]     
+
+TIME R:7.12 S:0.06 U:7.05 P:100% CMD:cargo run --release -- -l 180 -6 -b
+
+*** cargo run  --release -- -l 180 -6 -w  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180 -6 -w`
+ INFO  fft_bench > f64           [true]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [false]
+ INFO  fft_bench > wav output bw []
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   5.8940] sec 
+ INFO  fft_bench > (1) / (2)       [  30.5397]     
+
+TIME R:6.05 S:0.09 U:5.95 P:99% CMD:cargo run --release -- -l 180 -6 -w
+
+*** cargo run  --release -- -l 180 -6 -w -b -x  ***
+    Finished release [optimized] target(s) in 0.13s
+     Running `target/release/fft_bench -l 180 -6 -w -b -x`
+ INFO  fft_bench > f64           [true]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [true]
+ INFO  fft_bench > wav output bw [tmp_fftbw.wav]
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939] 
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec 
+ INFO  fft_bench > proc time   (2) [   8.3590] sec 
+ INFO  fft_bench > (1) / (2)       [  21.5338]     
+
+TIME R:8.52 S:0.27 U:7.53 P:91% CMD:cargo run --release -- -l 180 -6 -w -b -x
+
+*** cpu ***
+processor	: 0
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 1
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 2
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+processor	: 3
+model name	: ARMv7 Processor rev 4 (v7l)
+BogoMIPS	: 76.80
+Features	: half thumb fastmult vfp edsp neon vfpv3 tls vfpv4 idiva idivt vfpd32 lpae evtstrm crc32 
+CPU implementer	: 0x41
+CPU architecture: 7
+CPU variant	: 0x0
+CPU part	: 0xd03
+CPU revision	: 4
+
+Hardware	: BCM2835
+Revision	: a22082
+Serial		: 00000000e6a1195d
+Model		: Raspberry Pi 3 Model B Rev 1.2
+
+*** mem ***
+              total        used        free      shared  buff/cache   available
+Mem:          926Mi        77Mi       229Mi       8.0Mi       618Mi       778Mi
+Swap:          99Mi        11Mi        88Mi
+
+MemTotal:         948280 kB
+MemFree:          235420 kB
+MemAvailable:     797376 kB
+Buffers:           32948 kB
+Cached:           565284 kB
+SwapCached:          428 kB
+Active:           371492 kB
+Inactive:         255900 kB
+Active(anon):      14876 kB
+Inactive(anon):    23420 kB
+Active(file):     356616 kB
+Inactive(file):   232480 kB
+Unevictable:          32 kB
+Mlocked:              32 kB
+SwapTotal:        102396 kB
+SwapFree:          90876 kB
+Dirty:                28 kB
+Writeback:          6300 kB
+AnonPages:         28788 kB
+Mapped:            33620 kB
+Shmem:              9124 kB
+Slab:              67636 kB
+SReclaimable:      35400 kB
+SUnreclaim:        32236 kB
+KernelStack:        1088 kB
+PageTables:         1492 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:      576536 kB
+Committed_AS:     345260 kB
+VmallocTotal:    1114112 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+Percpu:              784 kB
+CmaTotal:           8192 kB
+CmaFree:            6068 kB
+2768.56user 45.53system 19:33.49elapsed 239%CPU (0avgtext+0avgdata 218940maxresident)k
+9328inputs+1552000outputs (34major+2018740minor)pagefaults 0swaps
