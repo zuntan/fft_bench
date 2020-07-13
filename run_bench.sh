@@ -1,12 +1,23 @@
 #!/bin/sh
 
+LEN=180
+BA=0
+
+if [ -n "$2" ]; then
+	LEN=$2
+fi
+
+if [ "$1" = "build_arm" -o "$1" = "BA" ]; then
+	BA=1
+fi
+
 param=(
-	" -l 180 -s"
-	" -l 180 -s -w"
-	" -l 180"
-	" -l 180 -w"
-	" -l 180 -6"
-	" -l 180 -6 -w"
+	" -l ${LEN} -s"
+	" -l ${LEN} -s -w"
+	" -l ${LEN}"
+	" -l ${LEN} -w"
+	" -l ${LEN} -6"
+	" -l ${LEN} -6 -w"
 )
 
 param_r=(
@@ -27,8 +38,18 @@ echo "*** cargo build ***"
 time cargo build
 
 echo ""
-echo "*** cargo build ***"
+echo "*** cargo build --release ***"
 time cargo build --release
+
+if [ ${BA} = "1" ]; then
+	echo ""
+	echo "*** cargo build --target armv7-unknown-linux-gnueabihf ***"
+	time cargo build --target armv7-unknown-linux-gnueabihf
+
+	echo ""
+	echo "*** cargo build --target armv7-unknown-linux-gnueabihf --release ***"
+	time cargo build --target armv7-unknown-linux-gnueabihf --release
+fi
 
 export RUST_LOG=info
 
