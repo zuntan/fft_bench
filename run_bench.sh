@@ -51,23 +51,44 @@ ${TIME_CMD} cargo check
 
 echo ""
 echo "*** cargo check 2 ***"
+touch src/main.rs
 ${TIME_CMD} cargo check
 
 echo ""
-echo "*** cargo build ***"
+echo "*** cargo build 1 ***"
 ${TIME_CMD} cargo build
 
 echo ""
-echo "*** cargo build --release ***"
+echo "*** cargo build 2 ***"
+touch src/main.rs
+${TIME_CMD} cargo build
+
+echo ""
+echo "*** cargo build --release 1 ***"
+${TIME_CMD} cargo build --release
+
+echo ""
+echo "*** cargo build --release 2 ***"
+touch src/main.rs
 ${TIME_CMD} cargo build --release
 
 if [ ${BA} = "1" ]; then
 	echo ""
-	echo "*** cargo build --target armv7-unknown-linux-gnueabihf ***"
+	echo "*** cargo build --target armv7-unknown-linux-gnueabihf 1 ***"
 	${TIME_CMD} cargo build --target armv7-unknown-linux-gnueabihf
 
 	echo ""
-	echo "*** cargo build --target armv7-unknown-linux-gnueabihf --release ***"
+	echo "*** cargo build --target armv7-unknown-linux-gnueabihf 2 ***"
+	touch src/main.rs
+	${TIME_CMD} cargo build --target armv7-unknown-linux-gnueabihf
+
+	echo ""
+	echo "*** cargo build --target armv7-unknown-linux-gnueabihf --release 1 ***"
+	${TIME_CMD} cargo build --target armv7-unknown-linux-gnueabihf --release
+
+	echo ""
+	echo "*** cargo build --target armv7-unknown-linux-gnueabihf --release 2 ***"
+	touch src/main.rs
 	${TIME_CMD} cargo build --target armv7-unknown-linux-gnueabihf --release
 fi
 

@@ -7,22 +7,22 @@ Linux home.zuntan.net 4.18.0-193.6.3.el8_2.x86_64 #1 SMP Wed Jun 10 11:09:32 UTC
 
 *** cargo clean ***
 
-TIME R:0.03 S:0.02 U:0.00 P:97% CMD:cargo clean
+TIME R:0.05 S:0.04 U:0.00 P:98% CMD:cargo clean
 
 *** cargo check 1 ***
    Compiling autocfg v1.0.0
    Compiling libc v0.2.72
    Compiling memchr v2.3.3
-   Compiling log v0.4.8
     Checking lazy_static v1.4.0
+   Compiling log v0.4.8
     Checking regex-syntax v0.6.18
-    Checking cfg-if v0.1.10
     Checking quick-error v1.2.3
+    Checking cfg-if v0.1.10
     Checking termcolor v1.1.0
     Checking unicode-width v0.1.8
     Checking hound v3.4.0
-    Checking thread_local v1.0.1
     Checking humantime v1.3.0
+    Checking thread_local v1.0.1
     Checking getopts v0.2.21
    Compiling num-traits v0.2.12
    Compiling num-integer v0.1.43
@@ -36,19 +36,20 @@ TIME R:0.03 S:0.02 U:0.00 P:97% CMD:cargo clean
     Checking env_logger v0.7.1
     Checking pretty_env_logger v0.4.0
     Checking fft_bench v0.1.0 (/opt/rust/fft_bench)
-    Finished dev [unoptimized + debuginfo] target(s) in 3.65s
+    Finished dev [unoptimized + debuginfo] target(s) in 3.68s
 
-TIME R:3.66 S:1.10 U:11.81 P:352% CMD:cargo check
+TIME R:3.68 S:1.10 U:11.91 P:353% CMD:cargo check
 
 *** cargo check 2 ***
-    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+    Checking fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.07s
 
-TIME R:0.02 S:0.00 U:0.01 P:100% CMD:cargo check
+TIME R:0.07 S:0.02 U:0.05 P:98% CMD:cargo check
 
-*** cargo build ***
+*** cargo build 1 ***
    Compiling lazy_static v1.4.0
-   Compiling quick-error v1.2.3
    Compiling regex-syntax v0.6.18
+   Compiling quick-error v1.2.3
    Compiling cfg-if v0.1.10
    Compiling termcolor v1.1.0
    Compiling unicode-width v0.1.8
@@ -63,8 +64,8 @@ TIME R:0.02 S:0.00 U:0.01 P:100% CMD:cargo check
    Compiling aho-corasick v0.7.13
    Compiling atty v0.2.14
    Compiling time v0.1.43
-   Compiling num-integer v0.1.43
    Compiling num-complex v0.3.0
+   Compiling num-integer v0.1.43
    Compiling chrono v0.4.13
    Compiling chfft v0.3.4
    Compiling regex v1.3.9
@@ -73,17 +74,23 @@ TIME R:0.02 S:0.00 U:0.01 P:100% CMD:cargo check
    Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
     Finished dev [unoptimized + debuginfo] target(s) in 6.14s
 
-TIME R:6.14 S:1.33 U:28.40 P:483% CMD:cargo build
+TIME R:6.15 S:1.32 U:28.38 P:483% CMD:cargo build
 
-*** cargo build --release ***
+*** cargo build 2 ***
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.91s
+
+TIME R:0.91 S:0.17 U:0.76 P:102% CMD:cargo build
+
+*** cargo build --release 1 ***
    Compiling autocfg v1.0.0
    Compiling libc v0.2.72
    Compiling memchr v2.3.3
-   Compiling log v0.4.8
    Compiling lazy_static v1.4.0
+   Compiling log v0.4.8
+   Compiling quick-error v1.2.3
    Compiling cfg-if v0.1.10
    Compiling regex-syntax v0.6.18
-   Compiling quick-error v1.2.3
    Compiling termcolor v1.1.0
    Compiling unicode-width v0.1.8
    Compiling hound v3.4.0
@@ -97,20 +104,26 @@ TIME R:6.14 S:1.33 U:28.40 P:483% CMD:cargo build
    Compiling time v0.1.43
    Compiling num-complex v0.3.0
    Compiling chrono v0.4.13
-   Compiling chfft v0.3.4
    Compiling regex v1.3.9
+   Compiling chfft v0.3.4
    Compiling env_logger v0.7.1
    Compiling pretty_env_logger v0.4.0
    Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
-    Finished release [optimized] target(s) in 9.71s
+    Finished release [optimized] target(s) in 9.64s
 
-TIME R:9.72 S:1.85 U:84.19 P:885% CMD:cargo build --release
+TIME R:9.65 S:1.84 U:83.92 P:888% CMD:cargo build --release
 
-*** cargo build --target armv7-unknown-linux-gnueabihf ***
+*** cargo build --release 2 ***
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished release [optimized] target(s) in 1.37s
+
+TIME R:1.38 S:0.10 U:5.62 P:414% CMD:cargo build --release
+
+*** cargo build --target armv7-unknown-linux-gnueabihf 1 ***
    Compiling lazy_static v1.4.0
-   Compiling quick-error v1.2.3
    Compiling cfg-if v0.1.10
    Compiling regex-syntax v0.6.18
+   Compiling quick-error v1.2.3
    Compiling termcolor v1.1.0
    Compiling unicode-width v0.1.8
    Compiling hound v3.4.0
@@ -132,11 +145,17 @@ TIME R:9.72 S:1.85 U:84.19 P:885% CMD:cargo build --release
    Compiling env_logger v0.7.1
    Compiling pretty_env_logger v0.4.0
    Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
-    Finished dev [unoptimized + debuginfo] target(s) in 6.63s
+    Finished dev [unoptimized + debuginfo] target(s) in 6.55s
 
-TIME R:6.64 S:1.46 U:28.68 P:453% CMD:cargo build --target armv7-unknown-linux-gnueabihf
+TIME R:6.56 S:1.54 U:28.69 P:460% CMD:cargo build --target armv7-unknown-linux-gnueabihf
 
-*** cargo build --target armv7-unknown-linux-gnueabihf --release ***
+*** cargo build --target armv7-unknown-linux-gnueabihf 2 ***
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 1.35s
+
+TIME R:1.35 S:0.21 U:1.16 P:101% CMD:cargo build --target armv7-unknown-linux-gnueabihf
+
+*** cargo build --target armv7-unknown-linux-gnueabihf --release 1 ***
    Compiling lazy_static v1.4.0
    Compiling quick-error v1.2.3
    Compiling cfg-if v0.1.10
@@ -162,12 +181,19 @@ TIME R:6.64 S:1.46 U:28.68 P:453% CMD:cargo build --target armv7-unknown-linux-g
    Compiling env_logger v0.7.1
    Compiling pretty_env_logger v0.4.0
    Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
-    Finished release [optimized] target(s) in 9.26s
+    Finished release [optimized] target(s) in 9.10s
 
-TIME R:9.26 S:1.48 U:70.82 P:780% CMD:cargo build --target armv7-unknown-linux-gnueabihf --release
+TIME R:9.10 S:1.39 U:71.76 P:803% CMD:cargo build --target armv7-unknown-linux-gnueabihf --release
+
+*** cargo build --target armv7-unknown-linux-gnueabihf --release 2 ***
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished release [optimized] target(s) in 1.43s
+
+TIME R:1.43 S:0.11 U:5.58 P:396% CMD:cargo build --target armv7-unknown-linux-gnueabihf --release
 
 *** cargo run  -- -l 180 -s  ***
-    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.90s
      Running `target/debug/fft_bench -l 180 -s`
  INFO  fft_bench > f64           [false]
  INFO  fft_bench > skip_fft      [true]
@@ -186,10 +212,10 @@ TIME R:9.26 S:1.48 U:70.82 P:780% CMD:cargo build --target armv7-unknown-linux-g
  INFO  fft_bench > fft count       [0] 
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   3.5210] sec 
- INFO  fft_bench > (1) / (2)       [  51.1221]     
+ INFO  fft_bench > proc time   (2) [   3.5630] sec 
+ INFO  fft_bench > (1) / (2)       [  50.5195]     
 
-TIME R:3.54 S:0.00 U:3.53 P:99% CMD:cargo run -- -l 180 -s
+TIME R:4.46 S:0.17 U:4.31 P:100% CMD:cargo run -- -l 180 -s
 
 *** cargo run  -- -l 180 -s -w  ***
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
@@ -212,10 +238,10 @@ TIME R:3.54 S:0.00 U:3.53 P:99% CMD:cargo run -- -l 180 -s
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   3.9730] sec 
- INFO  fft_bench > (1) / (2)       [  45.3061]     
+ INFO  fft_bench > proc time   (2) [   3.9850] sec 
+ INFO  fft_bench > (1) / (2)       [  45.1697]     
 
-TIME R:3.99 S:0.02 U:3.96 P:99% CMD:cargo run -- -l 180 -s -w
+TIME R:4.00 S:0.01 U:3.98 P:99% CMD:cargo run -- -l 180 -s -w
 
 *** cargo run  -- -l 180  ***
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
@@ -237,10 +263,10 @@ TIME R:3.99 S:0.02 U:3.96 P:99% CMD:cargo run -- -l 180 -s -w
  INFO  fft_bench > fft count       [1939] 
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   8.3310] sec 
- INFO  fft_bench > (1) / (2)       [  21.6062]     
+ INFO  fft_bench > proc time   (2) [   8.2920] sec 
+ INFO  fft_bench > (1) / (2)       [  21.7078]     
 
-TIME R:8.35 S:0.00 U:8.34 P:99% CMD:cargo run -- -l 180
+TIME R:8.31 S:0.00 U:8.30 P:99% CMD:cargo run -- -l 180
 
 *** cargo run  -- -l 180 -b  ***
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
@@ -262,10 +288,10 @@ TIME R:8.35 S:0.00 U:8.34 P:99% CMD:cargo run -- -l 180
  INFO  fft_bench > fft count       [1939] 
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [  13.9550] sec 
- INFO  fft_bench > (1) / (2)       [  12.8987]     
+ INFO  fft_bench > proc time   (2) [  14.0370] sec 
+ INFO  fft_bench > (1) / (2)       [  12.8233]     
 
-TIME R:13.97 S:0.00 U:13.95 P:99% CMD:cargo run -- -l 180 -b
+TIME R:14.05 S:0.00 U:14.04 P:99% CMD:cargo run -- -l 180 -b
 
 *** cargo run  -- -l 180 -w  ***
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
@@ -288,10 +314,10 @@ TIME R:13.97 S:0.00 U:13.95 P:99% CMD:cargo run -- -l 180 -b
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   8.7650] sec 
- INFO  fft_bench > (1) / (2)       [  20.5363]     
+ INFO  fft_bench > proc time   (2) [   8.7360] sec 
+ INFO  fft_bench > (1) / (2)       [  20.6045]     
 
-TIME R:8.78 S:0.04 U:8.71 P:99% CMD:cargo run -- -l 180 -w
+TIME R:8.75 S:0.01 U:8.72 P:99% CMD:cargo run -- -l 180 -w
 
 *** cargo run  -- -l 180 -w -b -x  ***
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
@@ -314,10 +340,10 @@ TIME R:8.78 S:0.04 U:8.71 P:99% CMD:cargo run -- -l 180 -w
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [  15.0360] sec 
- INFO  fft_bench > (1) / (2)       [  11.9713]     
+ INFO  fft_bench > proc time   (2) [  15.0520] sec 
+ INFO  fft_bench > (1) / (2)       [  11.9586]     
 
-TIME R:15.05 S:0.03 U:15.00 P:99% CMD:cargo run -- -l 180 -w -b -x
+TIME R:15.07 S:0.02 U:15.02 P:99% CMD:cargo run -- -l 180 -w -b -x
 
 *** cargo run  -- -l 180 -6  ***
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
@@ -339,10 +365,10 @@ TIME R:15.05 S:0.03 U:15.00 P:99% CMD:cargo run -- -l 180 -w -b -x
  INFO  fft_bench > fft count       [1939] 
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   6.4270] sec 
- INFO  fft_bench > (1) / (2)       [  28.0070]     
+ INFO  fft_bench > proc time   (2) [   6.4860] sec 
+ INFO  fft_bench > (1) / (2)       [  27.7522]     
 
-TIME R:6.44 S:0.00 U:6.43 P:99% CMD:cargo run -- -l 180 -6
+TIME R:6.50 S:0.01 U:6.49 P:99% CMD:cargo run -- -l 180 -6
 
 *** cargo run  -- -l 180 -6 -b  ***
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
@@ -364,10 +390,10 @@ TIME R:6.44 S:0.00 U:6.43 P:99% CMD:cargo run -- -l 180 -6
  INFO  fft_bench > fft count       [1939] 
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [  10.1540] sec 
- INFO  fft_bench > (1) / (2)       [  17.7271]     
+ INFO  fft_bench > proc time   (2) [  10.1500] sec 
+ INFO  fft_bench > (1) / (2)       [  17.7341]     
 
-TIME R:10.17 S:0.00 U:10.16 P:99% CMD:cargo run -- -l 180 -6 -b
+TIME R:10.17 S:0.01 U:10.15 P:99% CMD:cargo run -- -l 180 -6 -b
 
 *** cargo run  -- -l 180 -6 -w  ***
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
@@ -390,10 +416,10 @@ TIME R:10.17 S:0.00 U:10.16 P:99% CMD:cargo run -- -l 180 -6 -b
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   6.9580] sec 
- INFO  fft_bench > (1) / (2)       [  25.8697]     
+ INFO  fft_bench > proc time   (2) [   6.9690] sec 
+ INFO  fft_bench > (1) / (2)       [  25.8288]     
 
-TIME R:6.98 S:0.02 U:6.94 P:99% CMD:cargo run -- -l 180 -6 -w
+TIME R:6.99 S:0.01 U:6.96 P:99% CMD:cargo run -- -l 180 -6 -w
 
 *** cargo run  -- -l 180 -6 -w -b -x  ***
     Finished dev [unoptimized + debuginfo] target(s) in 0.01s
@@ -416,13 +442,14 @@ TIME R:6.98 S:0.02 U:6.94 P:99% CMD:cargo run -- -l 180 -6 -w
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [  11.6410] sec 
- INFO  fft_bench > (1) / (2)       [  15.4627]     
+ INFO  fft_bench > proc time   (2) [  11.3020] sec 
+ INFO  fft_bench > (1) / (2)       [  15.9265]     
 
-TIME R:11.66 S:0.03 U:11.36 P:97% CMD:cargo run -- -l 180 -6 -w -b -x
+TIME R:11.32 S:0.03 U:11.27 P:99% CMD:cargo run -- -l 180 -6 -w -b -x
 
 *** cargo run  --release -- -l 180 -s  ***
-    Finished release [optimized] target(s) in 0.01s
+   Compiling fft_bench v0.1.0 (/opt/rust/fft_bench)
+    Finished release [optimized] target(s) in 1.40s
      Running `target/release/fft_bench -l 180 -s`
  INFO  fft_bench > f64           [false]
  INFO  fft_bench > skip_fft      [true]
@@ -444,7 +471,7 @@ TIME R:11.66 S:0.03 U:11.36 P:97% CMD:cargo run -- -l 180 -6 -w -b -x
  INFO  fft_bench > proc time   (2) [   0.2750] sec 
  INFO  fft_bench > (1) / (2)       [ 654.5494]     
 
-TIME R:0.29 S:0.00 U:0.28 P:100% CMD:cargo run --release -- -l 180 -s
+TIME R:1.68 S:0.12 U:5.86 P:356% CMD:cargo run --release -- -l 180 -s
 
 *** cargo run  --release -- -l 180 -s -w  ***
     Finished release [optimized] target(s) in 0.01s
@@ -467,8 +494,8 @@ TIME R:0.29 S:0.00 U:0.28 P:100% CMD:cargo run --release -- -l 180 -s
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   0.2920] sec 
- INFO  fft_bench > (1) / (2)       [ 616.4421]     
+ INFO  fft_bench > proc time   (2) [   0.2890] sec 
+ INFO  fft_bench > (1) / (2)       [ 622.8411]     
 
 TIME R:0.31 S:0.01 U:0.29 P:99% CMD:cargo run --release -- -l 180 -s -w
 
@@ -495,7 +522,7 @@ TIME R:0.31 S:0.01 U:0.29 P:99% CMD:cargo run --release -- -l 180 -s -w
  INFO  fft_bench > proc time   (2) [   0.3490] sec 
  INFO  fft_bench > (1) / (2)       [ 515.7624]     
 
-TIME R:0.37 S:0.00 U:0.36 P:100% CMD:cargo run --release -- -l 180
+TIME R:0.37 S:0.00 U:0.36 P:99% CMD:cargo run --release -- -l 180
 
 *** cargo run  --release -- -l 180 -b  ***
     Finished release [optimized] target(s) in 0.01s
@@ -520,7 +547,7 @@ TIME R:0.37 S:0.00 U:0.36 P:100% CMD:cargo run --release -- -l 180
  INFO  fft_bench > proc time   (2) [   0.4310] sec 
  INFO  fft_bench > (1) / (2)       [ 417.6359]     
 
-TIME R:0.45 S:0.01 U:0.44 P:99% CMD:cargo run --release -- -l 180 -b
+TIME R:0.45 S:0.00 U:0.44 P:100% CMD:cargo run --release -- -l 180 -b
 
 *** cargo run  --release -- -l 180 -w  ***
     Finished release [optimized] target(s) in 0.01s
@@ -543,10 +570,10 @@ TIME R:0.45 S:0.01 U:0.44 P:99% CMD:cargo run --release -- -l 180 -b
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   0.3630] sec 
- INFO  fft_bench > (1) / (2)       [ 495.8708]     
+ INFO  fft_bench > proc time   (2) [   0.3610] sec 
+ INFO  fft_bench > (1) / (2)       [ 498.6180]     
 
-TIME R:0.38 S:0.01 U:0.36 P:98% CMD:cargo run --release -- -l 180 -w
+TIME R:0.38 S:0.01 U:0.36 P:99% CMD:cargo run --release -- -l 180 -w
 
 *** cargo run  --release -- -l 180 -w -b -x  ***
     Finished release [optimized] target(s) in 0.01s
@@ -569,10 +596,10 @@ TIME R:0.38 S:0.01 U:0.36 P:98% CMD:cargo run --release -- -l 180 -w
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   0.4800] sec 
- INFO  fft_bench > (1) / (2)       [ 375.0023]     
+ INFO  fft_bench > proc time   (2) [   0.4690] sec 
+ INFO  fft_bench > (1) / (2)       [ 383.7976]     
 
-TIME R:0.50 S:0.02 U:0.45 P:96% CMD:cargo run --release -- -l 180 -w -b -x
+TIME R:0.49 S:0.02 U:0.45 P:98% CMD:cargo run --release -- -l 180 -w -b -x
 
 *** cargo run  --release -- -l 180 -6  ***
     Finished release [optimized] target(s) in 0.01s
@@ -594,10 +621,10 @@ TIME R:0.50 S:0.02 U:0.45 P:96% CMD:cargo run --release -- -l 180 -w -b -x
  INFO  fft_bench > fft count       [1939] 
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   0.5700] sec 
- INFO  fft_bench > (1) / (2)       [ 315.7914]     
+ INFO  fft_bench > proc time   (2) [   0.5690] sec 
+ INFO  fft_bench > (1) / (2)       [ 316.3464]     
 
-TIME R:0.59 S:0.01 U:0.58 P:100% CMD:cargo run --release -- -l 180 -6
+TIME R:0.59 S:0.00 U:0.58 P:100% CMD:cargo run --release -- -l 180 -6
 
 *** cargo run  --release -- -l 180 -6 -b  ***
     Finished release [optimized] target(s) in 0.01s
@@ -622,7 +649,7 @@ TIME R:0.59 S:0.01 U:0.58 P:100% CMD:cargo run --release -- -l 180 -6
  INFO  fft_bench > proc time   (2) [   0.6820] sec 
  INFO  fft_bench > (1) / (2)       [ 263.9312]     
 
-TIME R:0.70 S:0.00 U:0.69 P:100% CMD:cargo run --release -- -l 180 -6 -b
+TIME R:0.70 S:0.00 U:0.69 P:99% CMD:cargo run --release -- -l 180 -6 -b
 
 *** cargo run  --release -- -l 180 -6 -w  ***
     Finished release [optimized] target(s) in 0.01s
@@ -645,10 +672,10 @@ TIME R:0.70 S:0.00 U:0.69 P:100% CMD:cargo run --release -- -l 180 -6 -b
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   0.5900] sec 
- INFO  fft_bench > (1) / (2)       [ 305.0866]     
+ INFO  fft_bench > proc time   (2) [   0.5880] sec 
+ INFO  fft_bench > (1) / (2)       [ 306.1243]     
 
-TIME R:0.61 S:0.01 U:0.59 P:99% CMD:cargo run --release -- -l 180 -6 -w
+TIME R:0.61 S:0.02 U:0.58 P:99% CMD:cargo run --release -- -l 180 -6 -w
 
 *** cargo run  --release -- -l 180 -6 -w -b -x  ***
     Finished release [optimized] target(s) in 0.01s
@@ -671,10 +698,10 @@ TIME R:0.61 S:0.01 U:0.59 P:99% CMD:cargo run --release -- -l 180 -6 -w
  INFO  fft_bench > wav sample len  [7938048]
  INFO  fft_bench > wav file   len  [15884332]
  INFO  fft_bench > wav time    (1) [ 180.0011] sec 
- INFO  fft_bench > proc time   (2) [   0.7230] sec 
- INFO  fft_bench > (1) / (2)       [ 248.9642]     
+ INFO  fft_bench > proc time   (2) [   0.7260] sec 
+ INFO  fft_bench > (1) / (2)       [ 247.9354]     
 
-TIME R:0.74 S:0.03 U:0.70 P:98% CMD:cargo run --release -- -l 180 -6 -w -b -x
+TIME R:0.74 S:0.02 U:0.70 P:98% CMD:cargo run --release -- -l 180 -6 -w -b -x
 
 *** cpu ***
 processor	: 0
@@ -684,7 +711,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3707.604
+cpu MHz		: 3690.973
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -712,7 +739,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3716.264
+cpu MHz		: 3692.032
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -740,7 +767,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3685.351
+cpu MHz		: 3720.086
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -768,7 +795,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3692.178
+cpu MHz		: 3705.951
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -796,7 +823,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3692.040
+cpu MHz		: 3725.822
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -824,7 +851,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3696.901
+cpu MHz		: 3693.788
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -852,7 +879,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3689.357
+cpu MHz		: 3691.981
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -880,7 +907,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3690.871
+cpu MHz		: 3688.791
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -908,7 +935,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3685.697
+cpu MHz		: 3665.025
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -936,7 +963,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3688.759
+cpu MHz		: 3690.865
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -964,7 +991,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3691.908
+cpu MHz		: 3690.857
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -992,7 +1019,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3690.884
+cpu MHz		: 3692.172
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -1020,7 +1047,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3689.758
+cpu MHz		: 3690.773
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -1048,7 +1075,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3672.975
+cpu MHz		: 3680.458
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -1076,7 +1103,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3685.160
+cpu MHz		: 3692.338
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -1104,7 +1131,7 @@ model		: 1
 model name	: AMD Ryzen 7 1800X Eight-Core Processor
 stepping	: 1
 microcode	: 0x8001138
-cpu MHz		: 3688.216
+cpu MHz		: 3678.811
 cache size	: 512 KB
 physical id	: 0
 siblings	: 16
@@ -1132,43 +1159,43 @@ Mem:           62Gi       6.7Gi        31Gi        25Mi        23Gi        55Gi
 Swap:         4.0Gi          0B       4.0Gi
 
 MemTotal:       65628536 kB
-MemFree:        33461736 kB
-MemAvailable:   57827300 kB
+MemFree:        33459020 kB
+MemAvailable:   57825144 kB
 Buffers:            4304 kB
-Cached:         24516216 kB
+Cached:         24516452 kB
 SwapCached:            0 kB
-Active:         11234660 kB
-Inactive:       19443324 kB
-Active(anon):    6158912 kB
+Active:         11281400 kB
+Inactive:       19398796 kB
+Active(anon):    6160888 kB
 Inactive(anon):    24324 kB
-Active(file):    5075748 kB
-Inactive(file): 19419000 kB
+Active(file):    5120512 kB
+Inactive(file): 19374472 kB
 Unevictable:           0 kB
 Mlocked:               0 kB
 SwapTotal:       4196348 kB
 SwapFree:        4196348 kB
-Dirty:               448 kB
+Dirty:              4768 kB
 Writeback:         30732 kB
-AnonPages:       6155780 kB
-Mapped:           159720 kB
+AnonPages:       6157696 kB
+Mapped:           160088 kB
 Shmem:             25752 kB
-KReclaimable:     594716 kB
-Slab:            1068952 kB
-SReclaimable:     594716 kB
-SUnreclaim:       474236 kB
-KernelStack:        6208 kB
-PageTables:        25140 kB
+KReclaimable:     595040 kB
+Slab:            1069020 kB
+SReclaimable:     595040 kB
+SUnreclaim:       473980 kB
+KernelStack:        6160 kB
+PageTables:        25220 kB
 NFS_Unstable:          0 kB
 Bounce:                0 kB
 WritebackTmp:          0 kB
 CommitLimit:    37010616 kB
-Committed_AS:    9527384 kB
+Committed_AS:    9487788 kB
 VmallocTotal:   34359738367 kB
 VmallocUsed:           0 kB
 VmallocChunk:          0 kB
 Percpu:            19584 kB
 HardwareCorrupted:     0 kB
-AnonHugePages:   6021120 kB
+AnonHugePages:   6023168 kB
 ShmemHugePages:        0 kB
 ShmemPmdMapped:        0 kB
 HugePages_Total:       0
@@ -1180,3 +1207,5 @@ Hugetlb:               0 kB
 DirectMap4k:      350328 kB
 DirectMap2M:    17408000 kB
 DirectMap1G:    50331648 kB
+
+TIME R:136.44 S:8.48 U:337.54 P:253% CMD:bash run_bench.sh BA
