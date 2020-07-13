@@ -1,5 +1,8 @@
 #!/bin/sh
 
+TIME_CMD=`which time`
+export TIME="\nTIME R:%e S:%S U:%U P:%P CMD:%C"
+
 echo ""
 echo "*** args ***"
 echo $0 $@
@@ -17,11 +20,15 @@ fi
 
 param=(
 	" -l ${LEN} -s"
-	" -l ${LEN} -s -w"
+	" -l ${LEN} -s -w "
 	" -l ${LEN}"
+	" -l ${LEN} -b"
 	" -l ${LEN} -w"
+	" -l ${LEN} -w -b -x"
 	" -l ${LEN} -6"
+	" -l ${LEN} -6 -b"
 	" -l ${LEN} -6 -w"
+	" -l ${LEN} -6 -w -b -x"
 )
 
 param_r=(
@@ -36,32 +43,32 @@ uname -a
 
 echo ""
 echo "*** cargo clean ***"
-time cargo clean
+${TIME_CMD} cargo clean
 
 echo ""
 echo "*** cargo check 1 ***"
-time cargo check
+${TIME_CMD} cargo check
 
 echo ""
 echo "*** cargo check 2 ***"
-time cargo check
+${TIME_CMD} cargo check
 
 echo ""
 echo "*** cargo build ***"
-time cargo build
+${TIME_CMD} cargo build
 
 echo ""
 echo "*** cargo build --release ***"
-time cargo build --release
+${TIME_CMD} cargo build --release
 
 if [ ${BA} = "1" ]; then
 	echo ""
 	echo "*** cargo build --target armv7-unknown-linux-gnueabihf ***"
-	time cargo build --target armv7-unknown-linux-gnueabihf
+	${TIME_CMD} cargo build --target armv7-unknown-linux-gnueabihf
 
 	echo ""
 	echo "*** cargo build --target armv7-unknown-linux-gnueabihf --release ***"
-	time cargo build --target armv7-unknown-linux-gnueabihf --release
+	${TIME_CMD} cargo build --target armv7-unknown-linux-gnueabihf --release
 fi
 
 export RUST_LOG=info
@@ -72,7 +79,7 @@ do
 	do
 		echo ""
 		echo "*** cargo run " ${param_r[$r]} ${param[$p]} " ***"
-		time cargo run ${param_r[$r]} ${param[$p]}
+		${TIME_CMD} cargo run ${param_r[$r]} ${param[$p]}
 	done
 done
 

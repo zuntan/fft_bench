@@ -33,10 +33,12 @@ fn usage( prog: &str, opts: getopts::Options )
 
 struct ProgOpt
 {
-    wav     : String
-,   len     : u32
-,   f64     : bool
-,   skipfft : bool
+    wav             : String
+,   wav_bw          : String
+,   len             : u32
+,   f64             : bool
+,   skip_fft        : bool
+,   enable_fftbw    : bool
 }
 
 fn parse_opt() -> ( ProgOpt, Vec::< f32 > )
@@ -48,10 +50,12 @@ fn parse_opt() -> ( ProgOpt, Vec::< f32 > )
     let mut opts = getopts::Options::new();
 
     opts.optflagopt( "w", "wav", "wav file output", "tmp.wav" );
+    opts.optflagopt( "x", "fftbw_wav", "wav file output (fft backword)", "tmp_fftbw.wav" );
     opts.optopt( "l", "len", "wav file output len (sec)", "15" );
     opts.optmulti( "f", "freq", "frequency (20-20000)", "1000" );
     opts.optflag( "6", "f64", "use f64 insteed of f32" );
     opts.optflag( "s", "skip_fft", "skip fft" );
+    opts.optflag( "b", "enable_fft_backward", "enable fft_backward" );
     opts.optflag( "v", "version", "Print version info and exit." );
     opts.optflag( "", "help", "Print this help menu." );
 
@@ -85,6 +89,23 @@ fn parse_opt() -> ( ProgOpt, Vec::< f32 > )
             {
                 Some( x )   => { x }
             ,   None        => { String::from( "tmp.wav" ) }
+            }
+        }
+        else
+        {
+            String::new()
+        };
+
+    let skip_fft        = opt_matches.opt_present( "skip_fft" );
+    let enable_fftbw    = opt_matches.opt_present( "enable_fft_backward" ) && !skip_fft;
+
+    let opt_wav_bw =
+        if enable_fftbw && opt_matches.opt_present( "fftbw_wav" )
+        {
+            match opt_matches.opt_str( "fftbw_wav" )
+            {
+                Some( x )   => { x }
+            ,   None        => { String::from( "tmp_fftbw.wav" ) }
             }
         }
         else
@@ -147,17 +168,43 @@ fn parse_opt() -> ( ProgOpt, Vec::< f32 > )
     }
 
     let f64     = opt_matches.opt_present( "f64" );
-    let skipfft = opt_matches.opt_present( "skip_fft" );
 
-    ( ProgOpt{ wav : opt_wav, len : opt_len, f64, skipfft }, freqs )
+    ( ProgOpt{ wav : opt_wav, wav_bw : opt_wav_bw, len : opt_len, f64, skip_fft, enable_fftbw }, freqs )
 }
 
-fn sample< T : Float + FloatConst + FromPrimitive >( freq : T, t : T ) -> T
+trait FloatConstEx
 {
-    ( t * freq * T::from( 2.0 ).unwrap() * T::PI() ).sin()
+    fn c_0_5() -> Self;
+    fn c_0_54() -> Self;
+    fn c_0_46() -> Self;
+    fn c_1_0() -> Self;
+    fn c_2_0() -> Self;
 }
 
-fn sample_a< T : Float + FloatConst + FromPrimitive >( freq : &[ T ], t : T ) -> T
+impl FloatConstEx for f32
+{
+    fn c_0_5()  -> Self{ 0.5 }
+    fn c_0_54() -> Self{ 0.54 }
+    fn c_0_46() -> Self{ 0.46 }
+    fn c_1_0()  -> Self{ 1.0 }
+    fn c_2_0()  -> Self{ 2.0 }
+}
+
+impl FloatConstEx for f64
+{
+    fn c_0_5()  -> Self{ 0.5 }
+    fn c_0_54() -> Self{ 0.54 }
+    fn c_0_46() -> Self{ 0.46 }
+    fn c_1_0()  -> Self{ 1.0 }
+    fn c_2_0()  -> Self{ 2.0 }
+}
+
+fn sample< T : Float + FloatConst + FromPrimitive + FloatConstEx >( freq : T, t : T ) -> T
+{
+    ( t * freq * T::c_2_0() * T::PI() ).sin()
+}
+
+fn sample_a< T : Float + FloatConst + FromPrimitive + FloatConstEx >( freq : &[ T ], t : T ) -> T
 {
     freq.iter().map( | x | sample::<T>( *x, t ) ).fold( num_traits::zero::<T>(), | acc, x | acc + x )
 }
@@ -166,17 +213,19 @@ const SAMPLE_RATE   : u32   = 44100;
 const FFT_LEN       : usize = 4096;
 
 fn bench<
-    T : Float + FloatConst + FromPrimitive + ToPrimitive + NumAssign + std::fmt::Debug
+    T : Float + FloatConst + FromPrimitive + ToPrimitive + FloatConstEx + NumAssign + std::fmt::Debug
 >( opt : ProgOpt, freqs : &[ T ] )
     -> bool
 {
     let tm_st = Utc::now();
 
-    log::info!( "f64         [{}]",         opt.f64 );
-    log::info!( "skipfft     [{}]",         opt.skipfft );
-    log::info!( "wav output  [{}]",         opt.wav );
-    log::info!( "wav len     [{}] sec",     opt.len );
-    log::info!( "freqs       {:?}",         freqs );
+    log::info!( "f64           [{}]",         opt.f64 );
+    log::info!( "skip_fft      [{}]",         opt.skip_fft );
+    log::info!( "wav output    [{}]",         opt.wav );
+    log::info!( "enable_fft_bw [{}]",         opt.enable_fftbw );
+    log::info!( "wav output bw [{}]",         opt.wav_bw );
+    log::info!( "wav len       [{}] sec",     opt.len );
+    log::info!( "freqs         {:?}",         freqs );
 
     let t_sample_rate   = T::from( SAMPLE_RATE ).unwrap();
     let t_i16_max       = T::from( i16::MAX ).unwrap();
@@ -199,7 +248,8 @@ fn bench<
     ,   sample_format   : hound::SampleFormat::Int
     };
 
-    let mut writer : Option::< hound::WavWriter< BufWriter< File > > > = None;
+    let mut writer      : Option::< hound::WavWriter< BufWriter< File > > > = None;
+    let mut writer_bw   : Option::< hound::WavWriter< BufWriter< File > > > = None;
 
     if opt.wav != ""
     {
@@ -214,12 +264,44 @@ fn bench<
         };
     }
 
+    if opt.enable_fftbw && opt.wav_bw != ""
+    {
+        writer_bw = match hound::WavWriter::create( &opt.wav_bw, spec )
+        {
+            Ok( x )     => { Some( x ) }
+        ,   Err( x )    =>
+            {
+                log::error!( "{:?}", x );
+                return false;
+            }
+        };
+    }
+
+    let mut smp_buf     = [ 0_i16 ; FFT_LEN ];
+    let mut win_buf     = [ num_traits::zero::<T>() ; FFT_LEN ];
+
+    let mut fft         = CFft1D::< T >::with_len( FFT_LEN );
+    let mut fft_buf     = [ Complex::< T >::new( num_traits::zero::<T>(), num_traits::zero::<T>() ) ; FFT_LEN ];
+    let mut fft_buf_r   = [ Complex::< T >::new( num_traits::zero::<T>(), num_traits::zero::<T>() ) ; FFT_LEN ];
+
+    let _c_fft_len = T::from( FFT_LEN ).unwrap();
+
+    for tt in 0..FFT_LEN
+    {
+        // Hanning Window
+        //win_buf[ tt ] = T::c_0_5()  - T::c_0_5()  * ( T::PI() * T::c_2_0() * ( T::from( tt ).unwrap() / _c_fft_len ) ).cos();
+
+        // Hamming Window
+        // win_buf[ tt ] = T::c_0_54() - T::c_0_46() * ( T::PI() * T::c_2_0() * ( T::from( tt ).unwrap() / _c_fft_len ) ).cos();
+
+        // No Window
+        win_buf[ tt ] = T::c_1_0();
+    }
+
     let t_end   : usize = opt.len as usize * SAMPLE_RATE as usize;
     let mut t   : usize = 0;
     let mut ls  : usize = 0;
-
-    let mut fft     = CFft1D::< T >::with_len( FFT_LEN );
-    let mut fft_buf = [ Complex::< T >::new( num_traits::zero::<T>(), num_traits::zero::<T>() ) ; FFT_LEN ];
+    let mut c   : usize = 0;
 
     loop
     {
@@ -228,13 +310,13 @@ fn bench<
             let s = sample_a( freqs, T::from( t + tt ).unwrap() / t_sample_rate );
             let s = s / s_max_a;
 
-            fft_buf[ tt ].re = s;
+            fft_buf[ tt ].re = s * win_buf[ tt ];
             fft_buf[ tt ].im = num_traits::zero::<T>();
-        }
 
-        if !opt.skipfft
-        {
-            let _ = fft.forward( &fft_buf );
+            let s = s * t_i16_max;
+            let s = s.to_i16().unwrap();
+
+            smp_buf[ tt ] = s;
         }
 
         if let Some( ref mut writer ) = writer
@@ -243,7 +325,41 @@ fn bench<
 
             for tt in 0..FFT_LEN
             {
-                let s = fft_buf[ tt ].re;
+                s16_writer.write_sample( smp_buf[ tt ] );
+            }
+
+            if let Err( x ) = s16_writer.flush()
+            {
+                log::error!( "{:?}", x );
+                return false;
+            }
+        }
+
+        if !opt.skip_fft
+        {
+            let fft_result = fft.forward( &fft_buf );
+
+            if opt.enable_fftbw
+            {
+                let fft_result = fft.backward( &fft_result );
+
+                for tt in 0..FFT_LEN
+                {
+                    fft_buf_r[ tt ].re = fft_result[ tt ].re;
+                    fft_buf_r[ tt ].im = fft_result[ tt ].im;
+                }
+            }
+
+            c += 1;
+        }
+
+        if let Some( ref mut writer ) = writer_bw
+        {
+            let mut s16_writer = writer.get_i16_writer( FFT_LEN as u32 );
+
+            for tt in 0..FFT_LEN
+            {
+                let s = fft_buf_r[ tt ].re;
                 let s = s * t_i16_max;
                 let s = s.to_i16().unwrap();
 
@@ -273,6 +389,15 @@ fn bench<
         }
     }
 
+    if let Some( writer ) = writer_bw
+    {
+        if let Err( x ) = writer.finalize()
+        {
+            log::error!( "{:?}", x );
+            return false;
+        }
+    }
+
     if let Some( writer ) = writer
     {
         if let Err( x ) = writer.finalize()
@@ -282,12 +407,14 @@ fn bench<
         }
     }
 
+    log::info!( "fft count       [{}] ",    c );
+
     let tm_ed = Utc::now();
 
     let ts = t as f64 / SAMPLE_RATE as f64;
     let tm = ( tm_ed - tm_st ).num_milliseconds() as f64 / 1000.0;
 
-    log::info!( "wav sample len  [{}]",             t );
+    log::info!( "wav sample len  [{}]",     t );
 
     if opt.wav != ""
     {
@@ -306,7 +433,13 @@ fn bench<
 
 fn main()
 {
-    // std::env::set_var( "RUST_LOG", "debug" );
+    if cfg!(debug_assertions)
+    {
+        if let Err(_) = env::var( "RUST_LOG" )
+        {
+            std::env::set_var( "RUST_LOG", "debug" );
+        }
+    }
 
     pretty_env_logger::init();
 
