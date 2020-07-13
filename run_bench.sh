@@ -26,7 +26,11 @@ param_r=(
 )
 
 echo ""
-echo "*** cargo clean ***"
+echo "*** cargo clean 1 ***"
+time cargo clean
+
+echo ""
+echo "*** cargo clean 2 ***"
 time cargo clean
 
 echo ""
