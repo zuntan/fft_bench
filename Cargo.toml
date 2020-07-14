@@ -1,8 +1,15 @@
 [package]
 name = "fft_bench"
 version = "0.1.0"
-authors = ["zuntan <zuntan@zuntan.net>"]
+authors = ["zuntansan"]
 edition = "2018"
+description = "Benchmark using FFT"
+readme = "README.md"
+homepage = "https://github.com/zuntan/mpdsh"
+repository = "https://github.com/zuntan/mpdsh"
+license = "MIT OR Apache-2.0"
+keywords = [ "fft", "benchmark" ]
+categories = [ "command-line-interface" ]
 
 [dependencies]
 pretty_env_logger = "0.4.0"
