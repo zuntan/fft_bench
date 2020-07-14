@@ -148,9 +148,11 @@ The result of running on my server and Raspberry Pi 3 is in the result directory
 ## total time
 
  - X86 Server
-     - 135.55  ( 251% CPU )
+     -  135.55 sec | 02:15.55 ( 251% CPU )
  - RPi 3B
-     - 19:33.49 ( 239% CPU )
-
+     - 1173.49 sec | 19:33.49 ( 239% CPU )
+ - RPi 3B / X86 Server
+     - 8.657 ( 865.7 % )
+     
 ## General comment
 
