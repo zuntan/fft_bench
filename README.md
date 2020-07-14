@@ -15,6 +15,8 @@ $ cargo check
 $ ( TIME="\nTIME R:%e S:%S U:%U P:%P CMD:%C"; \time bash run_bench.sh 2>&1 ) | tee result/result.txt
 ```
 
+( I can't speak English, so I am writing the text with Google Translate. Please forgive me for strange sentences. )
+
 # About this benchmark program
 
 This program internally generates a sine wave and FFT analyzes the data.
@@ -22,7 +24,6 @@ This program internally generates a sine wave and FFT analyzes the data.
 Then, the benchmark is obtained by measuring the compilation time of the program and the processing time of the program.
 
 This program has the following options.
-
 
 ```
 $ cargo run -- --help
@@ -65,7 +66,35 @@ Options:
  - -x
     - Saves the result of inverse FFT processing to the specified file name. Not valid when -s is specified. Not valid if -b is not specified
 
- - thanks
+ - Sample
+
+```
+$ cargo run  --release -- -l 180 -6 -w -b -x  ***
+    Finished release [optimized] target(s) in 0.01s
+     Running `target/release/fft_bench -l 180 -6 -w -b -x`
+ INFO  fft_bench > f64           [true]
+ INFO  fft_bench > skip_fft      [false]
+ INFO  fft_bench > wav output    [tmp.wav]
+ INFO  fft_bench > enable_fft_bw [true]
+ INFO  fft_bench > wav output bw [tmp_fftbw.wav]
+ INFO  fft_bench > wav len       [180] sec
+ INFO  fft_bench > freqs         [440.0, 554.364990234375, 659.2550048828125]
+ INFO  fft_bench > wav amp     [3.0]
+ INFO  fft_bench > 30 sec done
+ INFO  fft_bench > 60 sec done
+ INFO  fft_bench > 90 sec done
+ INFO  fft_bench > 120 sec done
+ INFO  fft_bench > 150 sec done
+ INFO  fft_bench > 180 sec done
+ INFO  fft_bench > fft count       [1939]
+ INFO  fft_bench > wav sample len  [7938048]
+ INFO  fft_bench > wav file   len  [15884332]
+ INFO  fft_bench > wav time    (1) [ 180.0011] sec
+ INFO  fft_bench > proc time   (2) [   0.7240] sec
+ INFO  fft_bench > (1) / (2)       [ 248.6203]
+```
+
+ - Thanks
     - [Hound](https://crates.io/crates/hound) A wav encoding and decoding library in Rust.
     - [chfft](https://crates.io/crates/chfft) Fastest Fourier Transform library implemented with pure Rust.
     - Many other library authors
