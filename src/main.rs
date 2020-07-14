@@ -36,7 +36,7 @@ struct ProgOpt
     wav             : String
 ,   wav_bw          : String
 ,   len             : u32
-,   f64             : bool
+,   mode_f64        : bool
 ,   skip_fft        : bool
 ,   enable_fftbw    : bool
 }
@@ -167,9 +167,9 @@ fn parse_opt() -> ( ProgOpt, Vec::< f32 > )
         freqs.push( 659.255 );      //  E5  659.255
     }
 
-    let f64     = opt_matches.opt_present( "f64" );
+    let mode_f64 = opt_matches.opt_present( "f64" );
 
-    ( ProgOpt{ wav : opt_wav, wav_bw : opt_wav_bw, len : opt_len, f64, skip_fft, enable_fftbw }, freqs )
+    ( ProgOpt{ wav : opt_wav, wav_bw : opt_wav_bw, len : opt_len, mode_f64, skip_fft, enable_fftbw }, freqs )
 }
 
 trait FloatConstEx
@@ -219,7 +219,7 @@ fn bench<
 {
     let tm_st = Utc::now();
 
-    log::info!( "f64           [{}]",         opt.f64 );
+    log::info!( "f64           [{}]",         opt.mode_f64 );
     log::info!( "skip_fft      [{}]",         opt.skip_fft );
     log::info!( "wav output    [{}]",         opt.wav );
     log::info!( "enable_fft_bw [{}]",         opt.enable_fftbw );
@@ -446,7 +446,7 @@ fn main()
     let ( opt, freqs ) = parse_opt();
 
     if !(
-        if opt.f64
+        if opt.mode_f64
         {
             let freqs = freqs.iter().map( | x | *x as f64 ).collect::< Vec< f64 > >();
             bench::< f64 >( opt, &freqs )
