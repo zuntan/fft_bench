@@ -1,5 +1,13 @@
 # fft_bench
 
+In developing a product that runs on RPi3, I wanted performance indicators on RPi3.
+
+I also found that there is a big difference in the speed of processing between debug and release builds of Rust.
+
+So I made a simple program and got a benchmark.
+
+You can run the benchmark with the following command steps.
+
 ```
 $ git clone https://github.com/zuntan/fft_bench.git
 $ cd fft_bench
@@ -56,6 +64,11 @@ Options:
 
  - -x
     - Saves the result of inverse FFT processing to the specified file name. Not valid when -s is specified. Not valid if -b is not specified
+
+ - thanks
+    - [Hound](https://crates.io/crates/hound) A wav encoding and decoding library in Rust.
+    - [chfft](https://crates.io/crates/chfft) Fastest Fourier Transform library implemented with pure Rust.
+    - Many other library authors
 
 # About this benchmark shell script ( run_bench.sh )
 
