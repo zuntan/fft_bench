@@ -62,7 +62,7 @@ fn parse_opt() -> ( ProgOpt, Vec::< f32 > )
     let opt_matches = match opts.parse( &args[1..] )
     {
         Ok( m ) => { m }
-        Err( f ) =>
+    ,   Err( f ) =>
         {
             eprintln!( "{}", f.to_string() );
             usage( &arg_prog, opts );
