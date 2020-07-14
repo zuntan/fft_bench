@@ -130,6 +130,12 @@ The result of running on my server and Raspberry Pi 3 is in the result directory
 | cargo build --release 1 (cross arm7) | 9.35 | 845%     | 176.36    | 383%        | 18.86         |
 | cargo build --release 2 (cross arm7) | 1.47 | 389%     | 18.08     | 278%        | 12.30         |
 
+ - At compile time, the X86 side is 8 to 14 times faster than RPi 3B. 13-18 times faster with a clean build
+
+ - The difference between the debug build and the release build is about 1.5 times, which is not a big difference.
+
+ - In my experience, compiling a large project on RPi 3B can take 10 minutes or more, so repeating builds on RPi 3B is not efficient. It can be said that development in a cross-compile environment is efficient.
+
 ## Program speed comparison
 
 |                      | FFT | FFT-BW | FILE-OUT | f64 | X86 (D)| RPi 3B (D)| X86 (R)| RPi 3B (R)| X86(D)/(R) | RPi 3B (D)/(R) | RPi 3B(D) : X86(D) | RPi 3B(R) : X86(R) |
@@ -145,6 +151,16 @@ The result of running on my server and Raspberry Pi 3 is in the result directory
 | ```-6 -w```          | *   |        | *        | *   | 7.00   | 41.56     | 0.61   | 6.05      | 11.48      | 6.87           | 5.94               | 6.87               |
 | ```-6 -w -b -x```    | *   | *      | *        | *   | 11.26  | 68.17     | 0.74   | 8.52      | 15.22      | 8.00           | 6.05               | 8.00               |
 
+ - Very large difference in execution speed between debug build and release build. [ X86(D)/(R), RPi 3B (D)/(R) ]
+    - RPi3B has 6 to 10 times, X86 has 15 to 31 times!
+
+ - *** Anyway, the debug build is running too slow. ***
+
+ - The difference in execution speed between RPi3B and X86 is 6 to 10 times. [ RPi 3B(R) : X86(R) ]
+    - With this method, there seems to be no significant difference depending on whether or not the file is output.
+    - On RPi3B, f32 seems to be faster than f64. Probably because the OS is 32bit.
+    - On x86, f64 seems to be faster than f32. Probably because the OS is 64bit. However, there is not much difference between f32 and f64 in the release build.
+
 ## total time
 
  - X86 Server
@@ -153,6 +169,14 @@ The result of running on my server and Raspberry Pi 3 is in the result directory
      - 1173.49 sec | 19:33.49 ( 239% CPU )
  - RPi 3B / X86 Server
      - 8.657 ( 865.7 % )
-     
+
 ## General comment
+
+ - Depending on the degree, rather than using Rust on RPi3B, it seems more efficient to develop it to some extent on an X86 machine and then run a cross-built one on RPi3B.
+    - Otherwise, you'll have to take a lot of breaks and coffee at compile time. I'm bloated.
+
+ - At that time, it is good to develop with RPi3B in mind that the performance difference is about 10 times.
+
+ - If you use RPi3B, *** be sure to use the release build. *** The debug build runs too slowly.
+    - I was about to give up on development with desperate lack of processing speed.
 
